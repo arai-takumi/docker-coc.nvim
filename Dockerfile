@@ -4,7 +4,7 @@ RUN git clone https://github.com/vim/vim.git
 
 WORKDIR /vim/src
 
-RUN make && make install
+RUN make -j$(grep '^processor' /proc/cpuinfo | wc -l) && make install
 
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
