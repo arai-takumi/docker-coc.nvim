@@ -2,6 +2,8 @@
 
 Unofficial noc.nvim on docker
 
+https://hub.docker.com/r/kansaipg/docker-coc.nvim
+
 ## installed
 
 * Nodejs
