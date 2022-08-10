@@ -9,4 +9,4 @@ https://hub.docker.com/r/kansaipg/docker-coc.nvim
 * Nodejs
 * vim (Build from GitHub source code)
 * vim-plug 
-
+* coc.nvim
