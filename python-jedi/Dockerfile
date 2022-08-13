@@ -11,3 +11,4 @@ COPY ./python-jedi/coc-settings.json /root/.vim/coc-settings.json
 
 COPY ./python-jedi/.vimrc /root/.vimrc
 
+WORKDIR /home/

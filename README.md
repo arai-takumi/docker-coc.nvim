@@ -4,9 +4,22 @@ Unofficial noc.nvim on docker
 
 https://hub.docker.com/r/kansaipg/docker-coc.nvim
 
-## installed
+## latest installed
 
 * Nodejs
 * vim (Build from GitHub source code)
 * vim-plug 
 * coc.nvim
+
+##  python-jedi installed
+
+Installed in addition to the latest
+
+* pip
+* jedi-language-server
+
+##  python-jedi installed
+
+Installed in addition to the latest
+
+* phpls

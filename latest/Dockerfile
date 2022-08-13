@@ -13,4 +13,4 @@ COPY ./latest/.vimrc /root/.vimrc
 
 RUN vim -c PlugInstall -c q -c q
 
-WORKDIR /
+WORKDIR /home
