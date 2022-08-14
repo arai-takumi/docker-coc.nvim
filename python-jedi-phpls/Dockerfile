@@ -13,4 +13,7 @@ COPY ./python-jedi/.vimrc /root/.vimrc
 
 WORKDIR /home/
 
+#https://stackoverflow.com/questions/50382603/how-to-timeout-with-exit0-from-bash
+#--preserve-status�~I~K�~E~C�~A��~R��~C�~A| �~A��~J��~A~K�~A��~A~D
+
 RUN (timeout 90s /usr/local/bin/vim; exit 0)

@@ -39,7 +39,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./python-jedi/Dockerfile
+          file: ./python-jedi-phpls/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: kansaipg/docker-coc.nvim:python-jedi

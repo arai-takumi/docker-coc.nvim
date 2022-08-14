@@ -155,5 +155,6 @@ set encoding=utf-8
 set fileformats=unix,dos,mac
 
 let g:coc_global_extensions = [
-      \'coc-jedi'
+      \'coc-jedi',
+      \'coc-phpls'
 \]

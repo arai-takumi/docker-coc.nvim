@@ -11,15 +11,10 @@ https://hub.docker.com/r/kansaipg/docker-coc.nvim
 * vim-plug 
 * coc.nvim
 
-##  python-jedi installed
+##  python-jedi-phpls installed
 
 Installed in addition to the latest
 
 * pip
 * jedi-language-server
-
-##  python-jedi installed
-
-Installed in addition to the latest
-
 * phpls
