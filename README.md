@@ -18,3 +18,5 @@ Installed in addition to the latest
 * pip
 * jedi-language-server
 * phpls
+* coc-json
+* coc-markdownlint

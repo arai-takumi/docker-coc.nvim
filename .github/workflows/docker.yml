@@ -3,7 +3,7 @@ name: Push to Docker registry
 #https://blog.shin1x1.com/entry/docker-multi-arch-build-on-github-actions
 on:
   schedule:
-    - cron: '0 8 */2 * *'
+    - cron: '0 8 */3 * *'
 
 jobs:
   build-and-push:
