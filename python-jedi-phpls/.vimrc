@@ -158,5 +158,6 @@ let g:coc_global_extensions = [
       \'coc-jedi',
       \'coc-json',
       \'coc-markdownlint',
+      \'coc-html',
       \'coc-phpls'
 \]
