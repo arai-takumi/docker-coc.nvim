@@ -2,6 +2,7 @@
 name: Push to Docker registry
 #https://blog.shin1x1.com/entry/docker-multi-arch-build-on-github-actions
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 8 */3 * *'
 
