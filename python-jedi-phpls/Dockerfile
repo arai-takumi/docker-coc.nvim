@@ -9,7 +9,9 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
 
 COPY ./python-jedi-phpls/coc-settings.json /root/.vim/coc-settings.json
 
-COPY ./python-jedi-phpls/.vimrc /root/.vimrc
+COPY ./python-jedi-phpls/coc_global_extensions.txt /root/coc_global_extensions.txt
+
+RUN cat coc_global_extensions.txt >> /root/.vimrc && rm /root/coc_global_extensions.txt
 
 WORKDIR /home/
 
