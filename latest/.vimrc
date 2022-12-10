@@ -151,5 +151,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+set number
 set encoding=utf-8
 set fileformats=unix,dos,mac
