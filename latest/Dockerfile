@@ -13,4 +13,6 @@ COPY ./latest/.vimrc /root/.vimrc
 
 RUN vim -c PlugInstall -c q -c q
 
+RUN chmod -R 777 /root
+
 WORKDIR /home
