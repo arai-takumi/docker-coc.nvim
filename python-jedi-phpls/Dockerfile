@@ -1,11 +1,12 @@
-FROM kansaipg/docker-coc.nvim
+FROM python
 
-RUN mkdir /home/build
+COPY --from=kansaipg/docker-coc.nvim /usr/local/bin/vimdiff /usr/local/bin/vimdiff
+COPY --from=kansaipg/docker-coc.nvim /usr/local/bin/vim /usr/local/bin/vim
+COPY --from=kansaipg/docker-coc.nvim /usr/local/bin/vimtutor /usr/local/bin/vimtutor
+COPY --from=kansaipg/docker-coc.nvim /usr/local/share/vim/ /usr/local/share/vim/ 
+COPY --from=kansaipg/docker-coc.nvim /root/.vim /root/.vim 
 
-WORKDIR /home/build
-
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
-    && python3 get-pip.py --force-reinstall && rm get-pip.py && pip3 install jedi-language-server
+RUN pip3 install jedi-language-server
 
 COPY ./python-jedi-phpls/coc-settings.json /root/.vim/coc-settings.json
 
