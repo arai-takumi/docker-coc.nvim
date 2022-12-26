@@ -1,4 +1,4 @@
-FROM debian:stable-slim as build-stage
+FROM debian:11 as build-stage
 
 RUN apt-get update && apt-get install -y git make curl gcc libncurses-dev
 
