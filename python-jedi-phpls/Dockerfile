@@ -4,9 +4,6 @@ RUN pip3 install jedi-language-server
 
 FROM python:3.7-slim
 
-RUN groupadd --gid 1000 node \
-    && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
-
 COPY --from=build-stage /usr/local/lib/python3.7/site-packages /root/.local/lib/python3.7/site-packages
 
 COPY --from=kansaipg/docker-coc.nvim /usr/local/bin/vimdiff /usr/local/bin/vimdiff
@@ -20,19 +17,18 @@ COPY --from=kansaipg/docker-coc.nvim /root/.vimrc /home/node/.vimrc
 COPY --from=kansaipg/docker-coc.nvim /usr/local/include/ /usr/local/include/
 COPY --from=kansaipg/docker-coc.nvim /usr/local/lib/ /usr/local/lib/
 COPY --from=kansaipg/docker-coc.nvim /usr/local/bin/ /usr/local/bin/
-RUN corepack disable && corepack enable
-
-RUN apt-get update && apt-get install -y git
 
 COPY ./python-jedi-phpls/coc-settings.json /home/node/.vim/coc-settings.json
-
 COPY ./python-jedi-phpls/coc_global_extensions.txt /home/node/coc_global_extensions.txt
 
-RUN cat /home/node/coc_global_extensions.txt >> /home/node/.vimrc
 
-RUN rm /home/node/coc_global_extensions.txt
-
-RUN chown node: -R /home/node
+RUN groupadd --gid 1000 node \
+    && useradd --uid 1000 --gid node --shell /bin/bash --create-home node \
+&& corepack disable && corepack enable \
+&& apt-get update && apt-get install -y git \
+&& cat /home/node/coc_global_extensions.txt >> /home/node/.vimrc \
+&& rm /home/node/coc_global_extensions.txt && chown node: -R /home/node \
+&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/node
 
