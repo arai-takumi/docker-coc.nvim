@@ -4,19 +4,13 @@ name: Push to Docker registry
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 7 */3 * *'
+    - cron: '0 9 */3 * *'
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2
@@ -29,7 +23,7 @@ jobs:
         with:
           context: .
           file: ./latest/Dockerfile
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: kansaipg/docker-coc.nvim:latest
 
@@ -38,6 +32,6 @@ jobs:
         with:
           context: .
           file: ./python-jedi-phpls/Dockerfile
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: kansaipg/docker-coc.nvim:python-jedi-php
