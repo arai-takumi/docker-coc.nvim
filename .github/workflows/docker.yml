@@ -20,8 +20,8 @@ jobs:
           
       - name: Build Docker Image
         run: |
-          docker build -t kansaipg/docker-coc.nvim:latest -f ./latest/Dockerfile
-          docker build -t kansaipg/docker-coc.nvim:python-jedi-php -f ./python-jedi-phpls/Dockerfile
+          docker build -t kansaipg/docker-coc.nvim:latest -f ./latest/Dockerfile .
+          docker build -t kansaipg/docker-coc.nvim:python-jedi-php -f ./python-jedi-phpls/Dockerfile .
           
           
       - name: Build Docker Image
