@@ -18,8 +18,8 @@ COPY --from=kansaipg/docker-coc.nvim /usr/local/include/ /usr/local/include/
 COPY --from=kansaipg/docker-coc.nvim /usr/local/lib/ /usr/local/lib/
 COPY --from=kansaipg/docker-coc.nvim /usr/local/bin/ /usr/local/bin/
 
-COPY ./python-jedi-phpls/coc-settings.json /home/node/.vim/coc-settings.json
-COPY ./python-jedi-phpls/coc_global_extensions.txt /home/node/coc_global_extensions.txt
+COPY ./coc-settings.json /home/node/.vim/coc-settings.json
+COPY ./coc_global_extensions.txt /home/node/coc_global_extensions.txt
 
 
 RUN groupadd --gid 1000 node \

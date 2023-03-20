@@ -19,7 +19,7 @@ COPY --from=build-stage /root/.vim /root/.vim
 
 RUN apt-get update && apt-get install -y git
 
-COPY ./latest/.vimrc /root/.vimrc
+COPY ./.vimrc /root/.vimrc
 
 RUN vim -c PlugInstall -c q -c q && chmod -R 777 /root \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
