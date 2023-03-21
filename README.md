@@ -2,7 +2,11 @@
 
 Unofficial noc.nvim on docker
 
-https://hub.docker.com/r/kansaipg/docker-coc.nvim
+``` bash
+docker pull ghcr.io/kansai-pg/docker-coc.nvim:python-jedi-php
+
+docker pull ghcr.io/kansai-pg/docker-coc.nvim:latest
+```
 
 ## latest installed
 
