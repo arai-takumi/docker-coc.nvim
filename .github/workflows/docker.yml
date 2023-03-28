@@ -12,19 +12,16 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+        run: | 
+          docker login ghcr.io -u kansai-pg -p ${{ secrets.GITHUB_TOKEN }}
           
       - name: Build Docker Image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/docker-coc.nvim:latest -f ./latest/Dockerfile ./latest/
-          docker build -t ghcr.io/${{ github.repository_owner }}/docker-coc.nvim:python-jedi-php -f ./python-jedi-phpls/Dockerfile ./python-jedi-phpls/
+          docker build -t ghcr.io/kansai-pg/docker-coc.nvim:latest -f ./latest/Dockerfile ./latest/
+          docker build -t ghcr.io/kansai-pg/docker-coc.nvim:python-jedi-php -f ./python-jedi-phpls/Dockerfile ./python-jedi-phpls/
           
           
       - name: push Docker Image
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}/docker-coc.nvim:latest
-          docker push ghcr.io/${{ github.repository_owner }}/docker-coc.nvim:python-jedi-php
+          docker push ghcr.io/kansai-pg/docker-coc.nvim:latest
+          docker push ghcr.io/kansai-pg/docker-coc.nvim:python-jedi-php
