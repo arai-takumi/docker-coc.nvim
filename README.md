@@ -8,6 +8,9 @@ docker pull ghcr.io/kansai-pg/docker-coc.nvim:python-jedi-php
 docker pull ghcr.io/kansai-pg/docker-coc.nvim:latest
 ```
 
+Automatically built daily from this source code
+https://github.com/vim/vim
+
 ## latest installed
 
 * Nodejs
