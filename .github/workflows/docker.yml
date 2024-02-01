@@ -13,15 +13,15 @@ jobs:
 
       - name: Login
         run: | 
-          docker login ghcr.io -u kansai-pg -p ${{ secrets.GITHUB_TOKEN }}
+          docker login ghcr.io -u arai-takumi -p ${{ secrets.GITHUB_TOKEN }}
           
       - name: Build Docker Image
         run: |
-          docker build -t ghcr.io/kansai-pg/docker-coc.nvim:latest -f ./latest/Dockerfile ./latest/
-          docker build -t ghcr.io/kansai-pg/docker-coc.nvim:python-jedi-php -f ./python-jedi-phpls/Dockerfile ./python-jedi-phpls/
+          docker build -t ghcr.io/arai-takumi/docker-coc.nvim:latest -f ./latest/Dockerfile ./latest/
+          docker build -t ghcr.io/arai-takumi/docker-coc.nvim:python-jedi-php -f ./python-jedi-phpls/Dockerfile ./python-jedi-phpls/
           
           
       - name: push Docker Image
         run: |
-          docker push ghcr.io/kansai-pg/docker-coc.nvim:latest
-          docker push ghcr.io/kansai-pg/docker-coc.nvim:python-jedi-php
+          docker push ghcr.io/arai-takumi/docker-coc.nvim:latest
+          docker push ghcr.io/arai-takumi/docker-coc.nvim:python-jedi-php
