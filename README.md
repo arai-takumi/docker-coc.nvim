@@ -3,9 +3,9 @@
 Unofficial noc.nvim on docker
 
 ``` bash
-docker pull ghcr.io/kansai-pg/docker-coc.nvim:python-jedi-php
+docker pull ghcr.io/arai-takumi/docker-coc.nvim:python-jedi-php
 
-docker pull ghcr.io/kansai-pg/docker-coc.nvim:latest
+docker pull ghcr.io/arai-takumi/docker-coc.nvim:latest
 ```
 
 Automatically built daily from this source code
