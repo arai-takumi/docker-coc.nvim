@@ -24,4 +24,6 @@ COPY ./.vimrc /root/.vimrc
 RUN vim -c PlugInstall -c q -c q && chmod -R 777 /root \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /home
+WORKDIR /home/node
+
+USER node
