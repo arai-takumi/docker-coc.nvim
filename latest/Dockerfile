@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y git make curl gcc libncurses-dev \
 WORKDIR /vim/src
 
 RUN make -j$(grep '^processor' /proc/cpuinfo | wc -l) && make install
+
 FROM node:bullseye-slim 
 
 COPY --from=build-stage /usr/local/bin/vimdiff /usr/local/bin/vimdiff
