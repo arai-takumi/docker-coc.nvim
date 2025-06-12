@@ -7,7 +7,7 @@ docker pull ghcr.io/arai-takumi/docker-coc.nvim:python-jedi-php
 
 docker pull ghcr.io/arai-takumi/docker-coc.nvim:latest
 ```
-vim is built daily from the source code here.  
+vim is built daily from this source code by GitHub Actions.
 https://github.com/vim/vim
 
 ## latest installed
